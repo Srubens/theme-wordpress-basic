@@ -2,13 +2,14 @@
 
 <!-- CONTEUDO -->
     <section>
-        <div>meu conteudo do index</div>
+        <!-- mostra a categoria que esta sendo filtrada -->
+        <h1><?php the_archive_title(); ?></h1>
 
         
         <?php if( have_posts() ): ?>
             <?php while( have_posts() ):  ?>
             <?php the_post(); ?>
-              <?php get_template_part('template_partes/post'); ?>
+               <?php get_template_part('template_partes/post'); ?>
            <?php endwhile; ?>
         <?php endif; ?>
 
@@ -22,10 +23,3 @@
     </section>
 
 <?php get_footer(); ?>
-
-<!-- TAMANHO DAS IMG
-PEQUENO - thumbnail
-MEDIUN - medium
-GRANDE - large
-ORIGINAL - full 
-the_post_thumbnail('', array('class' => 'nome da class')); -->
